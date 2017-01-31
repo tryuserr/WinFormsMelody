@@ -16,5 +16,33 @@ namespace Guess_the_melody
         {
             InitializeComponent();
         }
+
+        private void button_ok_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button_selectfolder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                string[] music_list = System.IO.Directory.GetFiles(fbd.SelectedPath, "*.mp3",
+                    checkBox_usesubdirs.Checked ? System.IO.SearchOption.AllDirectories : System.IO.SearchOption.TopDirectoryOnly);
+                listBox_music.Items.Clear();
+                listBox_music.Items.AddRange(music_list);
+            }
+        }
+
+        private void button_clearlist_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

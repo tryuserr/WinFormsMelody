@@ -16,5 +16,20 @@ namespace Guess_the_melody
         {
             InitializeComponent();
         }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_params_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_game_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

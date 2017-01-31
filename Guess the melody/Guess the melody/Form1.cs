@@ -19,7 +19,7 @@ namespace Guess_the_melody
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void button_params_Click(object sender, EventArgs e)

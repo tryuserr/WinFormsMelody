@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Guess_the_melody
 {
@@ -34,7 +35,7 @@ namespace Guess_the_melody
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string[] music_list = System.IO.Directory.GetFiles(fbd.SelectedPath, "*.mp3",
-                    checkBox_usesubdirs.Checked ? System.IO.SearchOption.AllDirectories : System.IO.SearchOption.TopDirectoryOnly);
+                    checkBox_usesubdirs.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 listBox_music.Items.Clear();
                 listBox_music.Items.AddRange(music_list);
             }

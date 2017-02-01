@@ -13,11 +13,13 @@ namespace Guess_the_melody
     public partial class fMain : Form
     {
         fParams fp;
+        fGame fg;
         public fMain()
         {
             InitializeComponent();
 
             fp = new fParams();
+            fg = new fGame();
         }
 
         private void button_exit_Click(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace Guess_the_melody
 
         private void button_game_Click(object sender, EventArgs e)
         {
-
+            fg.ShowDialog();
         }
     }
 }

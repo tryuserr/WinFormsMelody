@@ -28,7 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
+            this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button_nextmelody = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
+            // 
+            // WMP
+            // 
+            this.WMP.Enabled = true;
+            this.WMP.Location = new System.Drawing.Point(38, 147);
+            this.WMP.Name = "WMP";
+            this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
+            this.WMP.Size = new System.Drawing.Size(234, 45);
+            this.WMP.TabIndex = 0;
+            this.WMP.Visible = false;
+            // 
+            // button_nextmelody
+            // 
+            this.button_nextmelody.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_nextmelody.Location = new System.Drawing.Point(98, 93);
+            this.button_nextmelody.Name = "button_nextmelody";
+            this.button_nextmelody.Size = new System.Drawing.Size(100, 38);
+            this.button_nextmelody.TabIndex = 1;
+            this.button_nextmelody.Text = "Next";
+            this.button_nextmelody.UseVisualStyleBackColor = true;
+            this.button_nextmelody.Click += new System.EventHandler(this.button_nextmelody_Click);
             // 
             // fGame
             // 
@@ -36,12 +61,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Guess_the_melody.Properties.Resources._3D_Music_Words_Wallpaper__E_Entertainment;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.button_nextmelody);
+            this.Controls.Add(this.WMP);
             this.Name = "fGame";
             this.Text = "fGame";
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private AxWMPLib.AxWindowsMediaPlayer WMP;
+        private System.Windows.Forms.Button button_nextmelody;
     }
 }

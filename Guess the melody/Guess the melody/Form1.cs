@@ -22,6 +22,8 @@ namespace Guess_the_melody
             fg = new fGame();
         }
 
+        
+
         private void button_exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,6 +37,12 @@ namespace Guess_the_melody
         private void button_game_Click(object sender, EventArgs e)
         {
             fg.ShowDialog();
+        }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            Victorina.ReadParams();
+            Victorina.ReadMusic();
         }
     }
 }

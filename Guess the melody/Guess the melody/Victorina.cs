@@ -20,10 +20,16 @@ namespace Guess_the_melody
 
         static public void ReadMusic()
         {
-            string[] music_list = System.IO.Directory.GetFiles(lastFolder, "*.mp3",
+            try
+            {
+                string[] music_list = System.IO.Directory.GetFiles(lastFolder, "*.mp3",
                     allDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
-            list.Clear();
-            list.AddRange(music_list);
+                list.Clear();
+                list.AddRange(music_list);
+            }
+            catch 
+            {
+            }          
         }
 
         public static void WriteParams()
@@ -59,7 +65,7 @@ namespace Guess_the_melody
                 if (rk != null)
                 {
                     lastFolder = (string)rk.GetValue("LastFolder");
-                    randomStart = Convert.ToBoolean(rk.GetValue("LastFolder"));
+                    randomStart = Convert.ToBoolean(rk.GetValue("RandomStart"));
                     gameDuration = (int)rk.GetValue("GameDuration");
                     musicDuration = (int)rk.GetValue("MusicDuration");
                     allDirectories = Convert.ToBoolean(rk.GetValue("AllDirectories"));

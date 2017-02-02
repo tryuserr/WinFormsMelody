@@ -29,8 +29,8 @@ namespace Guess_the_melody
         private void button_ok_Click(object sender, EventArgs e)
         {
             Victorina.allDirectories = checkBox_usesubdirs.Checked;
-            Victorina.gameDuration = Convert.ToInt32(comboBox_gameduration);
-            Victorina.musicDuration = Convert.ToInt32(comboBox_musicduration);
+            Victorina.gameDuration = Convert.ToInt32(comboBox_gameduration.Text);
+            Victorina.musicDuration = Convert.ToInt32(comboBox_musicduration.Text);
             Victorina.randomStart = checkBox_randomstart.Checked;
             Victorina.WriteParams();
 
@@ -70,6 +70,8 @@ namespace Guess_the_melody
         private void fParams_Load(object sender, EventArgs e)
         {
             SetParams();
+            listBox_music.Items.Clear();
+            listBox_music.Items.AddRange(Victorina.list.ToArray());
         }
     }
 }

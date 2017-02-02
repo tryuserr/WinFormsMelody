@@ -18,14 +18,29 @@ namespace Guess_the_melody
             InitializeComponent();
         }
 
+        void SetParams()
+        {
+            checkBox_usesubdirs.Checked = Victorina.allDirectories;
+            checkBox_randomstart.Checked = Victorina.randomStart;
+            comboBox_gameduration.Text = Victorina.gameDuration.ToString();
+            comboBox_musicduration.Text = Victorina.musicDuration.ToString();
+        }
+
         private void button_ok_Click(object sender, EventArgs e)
         {
+            Victorina.allDirectories = checkBox_usesubdirs.Checked;
+            Victorina.gameDuration = Convert.ToInt32(comboBox_gameduration);
+            Victorina.musicDuration = Convert.ToInt32(comboBox_musicduration);
+            Victorina.randomStart = checkBox_randomstart.Checked;
             Victorina.WriteParams();
+
             this.Hide();
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
+            SetParams();
+
             this.Hide();
         }
 
@@ -37,6 +52,9 @@ namespace Guess_the_melody
             {
                 string[] music_list = System.IO.Directory.GetFiles(fbd.SelectedPath, "*.mp3",
                     checkBox_usesubdirs.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+
+                Victorina.lastFolder = fbd.SelectedPath;
+
                 listBox_music.Items.Clear();
                 listBox_music.Items.AddRange(music_list);
                 Victorina.list.Clear();
@@ -47,6 +65,11 @@ namespace Guess_the_melody
         private void button_clearlist_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void fParams_Load(object sender, EventArgs e)
+        {
+            SetParams();
         }
     }
 }

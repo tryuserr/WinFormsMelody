@@ -20,6 +20,7 @@ namespace Guess_the_melody
 
         private void button_ok_Click(object sender, EventArgs e)
         {
+            Victorina.WriteParams();
             this.Hide();
         }
 
@@ -38,6 +39,8 @@ namespace Guess_the_melody
                     checkBox_usesubdirs.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 listBox_music.Items.Clear();
                 listBox_music.Items.AddRange(music_list);
+                Victorina.list.Clear();
+                Victorina.list.AddRange(music_list);
             }
         }
 

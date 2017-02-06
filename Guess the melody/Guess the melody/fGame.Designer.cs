@@ -163,10 +163,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_nextmelody);
             this.Controls.Add(this.WMP);
+            this.KeyPreview = true;
             this.Name = "fGame";
             this.Text = "fGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
             this.Load += new System.EventHandler(this.fGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

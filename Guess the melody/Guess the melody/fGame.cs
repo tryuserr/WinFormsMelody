@@ -42,14 +42,12 @@ namespace Guess_the_melody
 
         private void button_continue_Click(object sender, EventArgs e)
         {
-            timer.Start();
-            WMP.Ctlcontrols.play();
+            GamePlay();
         }
 
         private void fGame_FormClosed(object sender, FormClosedEventArgs e)
         {
-            timer.Stop();
-            WMP.Ctlcontrols.stop();
+            GamePause();
         }
 
         private void fGame_Load(object sender, EventArgs e)
@@ -66,6 +64,26 @@ namespace Guess_the_melody
             {
                 timer.Stop();
                 WMP.Ctlcontrols.stop();
+            }
+        }
+
+        void GamePause()
+        {
+            timer.Stop();
+            WMP.Ctlcontrols.stop();
+        }
+
+        void GamePlay()
+        {
+            timer.Start();
+            WMP.Ctlcontrols.play();
+        }
+
+        private void fGame_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.A)
+            {
+
             }
         }
     }

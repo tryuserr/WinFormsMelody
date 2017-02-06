@@ -35,11 +35,15 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Gametime_label = new System.Windows.Forms.Label();
-            this.Timeforanswer_label = new System.Windows.Forms.Label();
-            this.comboBox_gameduration = new System.Windows.Forms.ComboBox();
-            this.comboBox_musicduration = new System.Windows.Forms.ComboBox();
             this.checkBox_randomstart = new System.Windows.Forms.CheckBox();
+            this.comboBox_musicduration = new System.Windows.Forms.ComboBox();
+            this.comboBox_gameduration = new System.Windows.Forms.ComboBox();
+            this.Timeforanswer_label = new System.Windows.Forms.Label();
+            this.Gametime_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +88,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(333, 280);
+            this.button_cancel.Location = new System.Drawing.Point(406, 280);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(252, 280);
+            this.button_ok.Location = new System.Drawing.Point(325, 280);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 5;
@@ -104,6 +108,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.checkBox_randomstart);
             this.groupBox1.Controls.Add(this.comboBox_musicduration);
             this.groupBox1.Controls.Add(this.comboBox_gameduration);
@@ -111,43 +119,20 @@
             this.groupBox1.Controls.Add(this.Gametime_label);
             this.groupBox1.Location = new System.Drawing.Point(13, 185);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 118);
+            this.groupBox1.Size = new System.Drawing.Size(271, 118);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game settings";
             // 
-            // Gametime_label
+            // checkBox_randomstart
             // 
-            this.Gametime_label.AutoSize = true;
-            this.Gametime_label.Location = new System.Drawing.Point(7, 20);
-            this.Gametime_label.Name = "Gametime_label";
-            this.Gametime_label.Size = new System.Drawing.Size(57, 13);
-            this.Gametime_label.TabIndex = 0;
-            this.Gametime_label.Text = "Game time";
-            // 
-            // Timeforanswer_label
-            // 
-            this.Timeforanswer_label.AutoSize = true;
-            this.Timeforanswer_label.Location = new System.Drawing.Point(7, 37);
-            this.Timeforanswer_label.Name = "Timeforanswer_label";
-            this.Timeforanswer_label.Size = new System.Drawing.Size(82, 13);
-            this.Timeforanswer_label.TabIndex = 1;
-            this.Timeforanswer_label.Text = "Time for answer";
-            // 
-            // comboBox_gameduration
-            // 
-            this.comboBox_gameduration.FormattingEnabled = true;
-            this.comboBox_gameduration.Items.AddRange(new object[] {
-            "30",
-            "45",
-            "60",
-            "90",
-            "120"});
-            this.comboBox_gameduration.Location = new System.Drawing.Point(108, 17);
-            this.comboBox_gameduration.Name = "comboBox_gameduration";
-            this.comboBox_gameduration.Size = new System.Drawing.Size(49, 21);
-            this.comboBox_gameduration.TabIndex = 2;
-            this.comboBox_gameduration.Text = "30";
+            this.checkBox_randomstart.AutoSize = true;
+            this.checkBox_randomstart.Location = new System.Drawing.Point(10, 62);
+            this.checkBox_randomstart.Name = "checkBox_randomstart";
+            this.checkBox_randomstart.Size = new System.Drawing.Size(135, 17);
+            this.checkBox_randomstart.TabIndex = 4;
+            this.checkBox_randomstart.Text = "Play with random place";
+            this.checkBox_randomstart.UseVisualStyleBackColor = true;
             // 
             // comboBox_musicduration
             // 
@@ -165,21 +150,80 @@
             this.comboBox_musicduration.TabIndex = 3;
             this.comboBox_musicduration.Text = "20";
             // 
-            // checkBox_randomstart
+            // comboBox_gameduration
             // 
-            this.checkBox_randomstart.AutoSize = true;
-            this.checkBox_randomstart.Location = new System.Drawing.Point(10, 62);
-            this.checkBox_randomstart.Name = "checkBox_randomstart";
-            this.checkBox_randomstart.Size = new System.Drawing.Size(135, 17);
-            this.checkBox_randomstart.TabIndex = 4;
-            this.checkBox_randomstart.Text = "Play with random place";
-            this.checkBox_randomstart.UseVisualStyleBackColor = true;
+            this.comboBox_gameduration.FormattingEnabled = true;
+            this.comboBox_gameduration.Items.AddRange(new object[] {
+            "30",
+            "45",
+            "60",
+            "90",
+            "120"});
+            this.comboBox_gameduration.Location = new System.Drawing.Point(108, 17);
+            this.comboBox_gameduration.Name = "comboBox_gameduration";
+            this.comboBox_gameduration.Size = new System.Drawing.Size(49, 21);
+            this.comboBox_gameduration.TabIndex = 2;
+            this.comboBox_gameduration.Text = "30";
+            // 
+            // Timeforanswer_label
+            // 
+            this.Timeforanswer_label.AutoSize = true;
+            this.Timeforanswer_label.Location = new System.Drawing.Point(7, 37);
+            this.Timeforanswer_label.Name = "Timeforanswer_label";
+            this.Timeforanswer_label.Size = new System.Drawing.Size(82, 13);
+            this.Timeforanswer_label.TabIndex = 1;
+            this.Timeforanswer_label.Text = "Time for answer";
+            // 
+            // Gametime_label
+            // 
+            this.Gametime_label.AutoSize = true;
+            this.Gametime_label.Location = new System.Drawing.Point(7, 20);
+            this.Gametime_label.Name = "Gametime_label";
+            this.Gametime_label.Size = new System.Drawing.Size(57, 13);
+            this.Gametime_label.TabIndex = 0;
+            this.Gametime_label.Text = "Game time";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(163, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Player 1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(163, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Player 2";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(214, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(50, 21);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "A";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(214, 37);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(50, 21);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.Text = "P";
             // 
             // fParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 315);
+            this.ClientSize = new System.Drawing.Size(500, 315);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_cancel);
@@ -211,5 +255,9 @@
         private System.Windows.Forms.Label Timeforanswer_label;
         private System.Windows.Forms.Label Gametime_label;
         private System.Windows.Forms.CheckBox checkBox_randomstart;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

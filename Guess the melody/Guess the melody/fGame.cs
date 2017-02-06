@@ -83,7 +83,24 @@ namespace Guess_the_melody
         {
             if (e.KeyData == Keys.A)
             {
+                GamePause();
+                if (MessageBox.Show("Is true?", "Player 1", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    label_firstplayer.Text = Convert.ToString(Convert.ToInt32(label_firstplayer.Text) + 1);
+                    MakeMusic();
+                }
+                GamePlay();
+            }
 
+            if (e.KeyData == Keys.P)
+            {
+                GamePause();
+                if (MessageBox.Show("Is true?", "Player 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    label_secondplayer.Text = Convert.ToString(Convert.ToInt32(label_secondplayer.Text) + 1);
+                    MakeMusic();
+                }
+                GamePlay();
             }
         }
     }

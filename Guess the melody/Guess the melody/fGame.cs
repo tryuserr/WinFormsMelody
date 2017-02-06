@@ -13,19 +13,28 @@ namespace Guess_the_melody
     public partial class fGame : Form
     {
         Random rnd;
+        int musicduration;
         public fGame()
         {
             InitializeComponent();
             rnd = new Random();
+            musicduration = Victorina.musicDuration;
         }
 
         void MakeMusic()
         {
-            int n = rnd.Next(0, Victorina.list.Count - 1);
-            WMP.URL = Victorina.list[n];
-            Victorina.list.RemoveAt(n);
+            if (Victorina.list.Count == 0)
+            {
+                EndGame();
+            }
+            else
+            {
+                int n = rnd.Next(0, Victorina.list.Count - 1);
+                WMP.URL = Victorina.list[n];
+                Victorina.list.RemoveAt(n);
 
-            label_melodycounter.Text = Victorina.list.Count.ToString();
+                label_melodycounter.Text = Victorina.list.Count.ToString();
+            }
         }
 
         private void button_nextmelody_Click(object sender, EventArgs e)
@@ -60,10 +69,14 @@ namespace Guess_the_melody
         private void timer_Tick(object sender, EventArgs e)
         {
             progressBar.Value++;
+            musicduration--;
             if (progressBar.Value == progressBar.Maximum)
             {
-                timer.Stop();
-                WMP.Ctlcontrols.stop();
+                EndGame();
+            }
+            if (musicduration == 0)
+            {
+                MakeMusic();
             }
         }
 
@@ -77,6 +90,12 @@ namespace Guess_the_melody
         {
             timer.Start();
             WMP.Ctlcontrols.play();
+        }
+
+        void EndGame()
+        {
+            timer.Stop();
+            WMP.Ctlcontrols.stop();
         }
 
         private void fGame_KeyDown(object sender, KeyEventArgs e)

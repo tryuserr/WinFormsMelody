@@ -13,10 +13,12 @@ namespace Guess_the_melody
     
     public partial class fMessage : Form
     {
-        int timeanswer = 10;
+        public int timeanswer;
         public fMessage()
-        {
+        {          
             InitializeComponent();
+            timeanswer = Victorina.timeforanswer;
+            timer.Start();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -33,6 +35,11 @@ namespace Guess_the_melody
         private void fMessage_FormClosed(object sender, FormClosedEventArgs e)
         {
             timer.Stop();
+        }
+
+        private void label_showanswer_Click(object sender, EventArgs e)
+        {
+            label_showanswer.Text = Victorina.answer;
         }
     }
 }

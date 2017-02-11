@@ -106,7 +106,7 @@ namespace Guess_the_melody
             {
                 GamePause();
                 fMessage fm = new fMessage();
-                fm.label_text.Text = "Player 1";
+                fm.label_player.Text = "Player 1";
                 if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     label_firstplayer.Text = Convert.ToString(Convert.ToInt32(label_firstplayer.Text) + 1);
@@ -119,7 +119,7 @@ namespace Guess_the_melody
             {
                 GamePause();
                 fMessage fm = new fMessage();
-                fm.label_text.Text = "Player 2";
+                fm.label_player.Text = "Player 2";
                 if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     label_secondplayer.Text = Convert.ToString(Convert.ToInt32(label_secondplayer.Text) + 1);

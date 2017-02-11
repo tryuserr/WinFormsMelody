@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_player = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label_time = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // label1
+            // label_player
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label_text";
+            this.label_player.AutoSize = true;
+            this.label_player.Location = new System.Drawing.Point(126, 29);
+            this.label_player.Name = "label_player";
+            this.label_player.Size = new System.Drawing.Size(52, 13);
+            this.label_player.TabIndex = 0;
+            this.label_player.Text = "label_text";
             // 
             // button1
             // 
@@ -87,7 +87,7 @@
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_player);
             this.Name = "fMessage";
             this.Text = "fMessage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fMessage_FormClosed);
@@ -98,7 +98,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label_player;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label_time;

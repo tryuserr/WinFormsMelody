@@ -18,7 +18,7 @@ namespace Guess_the_melody
         {
             InitializeComponent();
             rnd = new Random();
-            musicduration = Victorina.musicDuration;
+            progressBar.Maximum = Victorina.gameDuration;
         }
 
         void MakeMusic()
@@ -29,10 +29,11 @@ namespace Guess_the_melody
             }
             else
             {
+                musicduration = Victorina.musicDuration;                
                 int n = rnd.Next(0, Victorina.list.Count - 1);
                 WMP.URL = Victorina.list[n];
+                Victorina.answer = System.IO.Path.GetFileNameWithoutExtension(WMP.URL);
                 Victorina.list.RemoveAt(n);
-
                 label_melodycounter.Text = Victorina.list.Count.ToString();
             }
         }
@@ -104,6 +105,11 @@ namespace Guess_the_melody
         {
             if (e.KeyData == Keys.A)
             {
+                if (timer.Enabled == false)
+                {
+                    return;
+                }
+
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.label_player.Text = "Player 1";
@@ -117,6 +123,10 @@ namespace Guess_the_melody
 
             if (e.KeyData == Keys.P)
             {
+                if (timer.Enabled == false)
+                {
+                    return;
+                }
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.label_player.Text = "Player 2";

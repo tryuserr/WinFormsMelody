@@ -30,11 +30,12 @@
         {
             this.listBox_music = new System.Windows.Forms.ListBox();
             this.button_selectfolder = new System.Windows.Forms.Button();
-            this.button_clearlist = new System.Windows.Forms.Button();
             this.checkBox_usesubdirs = new System.Windows.Forms.CheckBox();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_timeforanswer = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,20 +66,10 @@
             this.button_selectfolder.UseVisualStyleBackColor = true;
             this.button_selectfolder.Click += new System.EventHandler(this.button_selectfolder_Click);
             // 
-            // button_clearlist
-            // 
-            this.button_clearlist.Location = new System.Drawing.Point(95, 155);
-            this.button_clearlist.Name = "button_clearlist";
-            this.button_clearlist.Size = new System.Drawing.Size(75, 23);
-            this.button_clearlist.TabIndex = 2;
-            this.button_clearlist.Text = "Clear list";
-            this.button_clearlist.UseVisualStyleBackColor = true;
-            this.button_clearlist.Click += new System.EventHandler(this.button_clearlist_Click);
-            // 
             // checkBox_usesubdirs
             // 
             this.checkBox_usesubdirs.AutoSize = true;
-            this.checkBox_usesubdirs.Location = new System.Drawing.Point(327, 159);
+            this.checkBox_usesubdirs.Location = new System.Drawing.Point(6, 95);
             this.checkBox_usesubdirs.Name = "checkBox_usesubdirs";
             this.checkBox_usesubdirs.Size = new System.Drawing.Size(81, 17);
             this.checkBox_usesubdirs.TabIndex = 3;
@@ -107,7 +98,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox_timeforanswer);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.checkBox_usesubdirs);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -121,6 +115,30 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game settings";
+            // 
+            // comboBox_timeforanswer
+            // 
+            this.comboBox_timeforanswer.FormattingEnabled = true;
+            this.comboBox_timeforanswer.Items.AddRange(new object[] {
+            "5",
+            "7",
+            "9",
+            "10",
+            "12"});
+            this.comboBox_timeforanswer.Location = new System.Drawing.Point(108, 57);
+            this.comboBox_timeforanswer.Name = "comboBox_timeforanswer";
+            this.comboBox_timeforanswer.Size = new System.Drawing.Size(49, 21);
+            this.comboBox_timeforanswer.TabIndex = 10;
+            this.comboBox_timeforanswer.Text = "5";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Time for answer";
             // 
             // comboBox2
             // 
@@ -192,16 +210,16 @@
             // Timeforanswer_label
             // 
             this.Timeforanswer_label.AutoSize = true;
-            this.Timeforanswer_label.Location = new System.Drawing.Point(7, 37);
+            this.Timeforanswer_label.Location = new System.Drawing.Point(7, 41);
             this.Timeforanswer_label.Name = "Timeforanswer_label";
-            this.Timeforanswer_label.Size = new System.Drawing.Size(82, 13);
+            this.Timeforanswer_label.Size = new System.Drawing.Size(57, 13);
             this.Timeforanswer_label.TabIndex = 1;
-            this.Timeforanswer_label.Text = "Time for answer";
+            this.Timeforanswer_label.Text = "Music time";
             // 
             // Gametime_label
             // 
             this.Gametime_label.AutoSize = true;
-            this.Gametime_label.Location = new System.Drawing.Point(7, 20);
+            this.Gametime_label.Location = new System.Drawing.Point(7, 22);
             this.Gametime_label.Name = "Gametime_label";
             this.Gametime_label.Size = new System.Drawing.Size(57, 13);
             this.Gametime_label.TabIndex = 0;
@@ -215,8 +233,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.button_cancel);
-            this.Controls.Add(this.checkBox_usesubdirs);
-            this.Controls.Add(this.button_clearlist);
             this.Controls.Add(this.button_selectfolder);
             this.Controls.Add(this.listBox_music);
             this.Name = "fParams";
@@ -225,7 +241,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -233,7 +248,6 @@
 
         private System.Windows.Forms.ListBox listBox_music;
         private System.Windows.Forms.Button button_selectfolder;
-        private System.Windows.Forms.Button button_clearlist;
         private System.Windows.Forms.CheckBox checkBox_usesubdirs;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_ok;
@@ -246,5 +260,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_timeforanswer;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label_time = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label_showanswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_player
@@ -79,11 +80,22 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // label_showanswer
+            // 
+            this.label_showanswer.AutoSize = true;
+            this.label_showanswer.Location = new System.Drawing.Point(126, 156);
+            this.label_showanswer.Name = "label_showanswer";
+            this.label_showanswer.Size = new System.Drawing.Size(41, 13);
+            this.label_showanswer.TabIndex = 4;
+            this.label_showanswer.Text = "Melody";
+            this.label_showanswer.Click += new System.EventHandler(this.label_showanswer_Click);
+            // 
             // fMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 356);
+            this.Controls.Add(this.label_showanswer);
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label label_showanswer;
     }
 }

@@ -37,6 +37,24 @@ namespace Guess_the_melody
             }
         }
 
+        void GamePause()
+        {
+            timer.Stop();
+            WMP.Ctlcontrols.stop();
+        }
+
+        void GamePlay()
+        {
+            timer.Start();
+            WMP.Ctlcontrols.play();
+        }
+
+        void EndGame()
+        {
+            WMP.Ctlcontrols.stop();
+            timer.Stop();            
+        }
+
         private void button_nextmelody_Click(object sender, EventArgs e)
         {
             MakeMusic();
@@ -70,33 +88,17 @@ namespace Guess_the_melody
         {
             progressBar.Value++;
             musicduration--;
+
             if (progressBar.Value == progressBar.Maximum)
             {
                 EndGame();
+                return;
             }
             if (musicduration == 0)
             {
                 MakeMusic();
             }
-        }
-
-        void GamePause()
-        {
-            timer.Stop();
-            WMP.Ctlcontrols.stop();
-        }
-
-        void GamePlay()
-        {
-            timer.Start();
-            WMP.Ctlcontrols.play();
-        }
-
-        void EndGame()
-        {
-            timer.Stop();
-            WMP.Ctlcontrols.stop();
-        }
+        }              
 
         private void fGame_KeyDown(object sender, KeyEventArgs e)
         {

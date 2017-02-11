@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_text = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label_time = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // label_text
+            // label1
             // 
-            this.label_text.AutoSize = true;
-            this.label_text.Location = new System.Drawing.Point(126, 29);
-            this.label_text.Name = "label_text";
-            this.label_text.Size = new System.Drawing.Size(0, 13);
-            this.label_text.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(126, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label_text";
             // 
             // button1
             // 
@@ -61,16 +65,32 @@
             this.button2.Text = "No";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label_time
+            // 
+            this.label_time.AutoSize = true;
+            this.label_time.Location = new System.Drawing.Point(129, 78);
+            this.label_time.Name = "label_time";
+            this.label_time.Size = new System.Drawing.Size(13, 13);
+            this.label_time.TabIndex = 3;
+            this.label_time.Text = "0";
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // fMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 356);
+            this.Controls.Add(this.label_time);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label_text);
+            this.Controls.Add(this.label1);
             this.Name = "fMessage";
             this.Text = "fMessage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fMessage_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,8 +98,10 @@
 
         #endregion
 
-        public System.Windows.Forms.Label label_text;
+        public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label_time;
+        private System.Windows.Forms.Timer timer;
     }
 }

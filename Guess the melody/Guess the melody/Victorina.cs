@@ -12,11 +12,13 @@ namespace Guess_the_melody
     {
         static public List<string> list = new List<string>();
         static public int gameDuration = 60;
+        static public int timeforanswer = 10;
         static public int musicDuration = 10;
         static public bool randomStart = false;
         static public string lastFolder = "";
         static public bool allDirectories = false;
         static string regKeyName = "Software\\MyCompany\\Guessthemelody";
+        static public string answer = "";
 
         static public void ReadMusic()
         {
@@ -46,6 +48,7 @@ namespace Guess_the_melody
                 rk.SetValue("GameDuration", gameDuration);
                 rk.SetValue("MusicDuration", musicDuration);
                 rk.SetValue("AllDirectories", allDirectories);
+                rk.SetValue("TimeForAnswer", timeforanswer);
 
             }
             finally
@@ -68,7 +71,8 @@ namespace Guess_the_melody
                     randomStart = Convert.ToBoolean(rk.GetValue("RandomStart"));
                     gameDuration = (int)rk.GetValue("GameDuration");
                     musicDuration = (int)rk.GetValue("MusicDuration");
-                    allDirectories = Convert.ToBoolean(rk.GetValue("AllDirectories"));
+                    timeforanswer = (int)rk.GetValue("TimeForAnswer");
+                    allDirectories = Convert.ToBoolean(rk.GetValue("AllDirectories"));                   
                 }
                 
             }

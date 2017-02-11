@@ -35,15 +35,14 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox_randomstart = new System.Windows.Forms.CheckBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox_musicduration = new System.Windows.Forms.ComboBox();
             this.comboBox_gameduration = new System.Windows.Forms.ComboBox();
             this.Timeforanswer_label = new System.Windows.Forms.Label();
             this.Gametime_label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +111,6 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkBox_randomstart);
             this.groupBox1.Controls.Add(this.comboBox_musicduration);
             this.groupBox1.Controls.Add(this.comboBox_gameduration);
             this.groupBox1.Controls.Add(this.Timeforanswer_label);
@@ -124,15 +122,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game settings";
             // 
-            // checkBox_randomstart
+            // comboBox2
             // 
-            this.checkBox_randomstart.AutoSize = true;
-            this.checkBox_randomstart.Location = new System.Drawing.Point(10, 62);
-            this.checkBox_randomstart.Name = "checkBox_randomstart";
-            this.checkBox_randomstart.Size = new System.Drawing.Size(135, 17);
-            this.checkBox_randomstart.TabIndex = 4;
-            this.checkBox_randomstart.Text = "Play with random place";
-            this.checkBox_randomstart.UseVisualStyleBackColor = true;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(214, 37);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(50, 21);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.Text = "P";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(214, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(50, 21);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "A";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(163, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Player 2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(163, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Player 1";
             // 
             // comboBox_musicduration
             // 
@@ -183,42 +207,6 @@
             this.Gametime_label.TabIndex = 0;
             this.Gametime_label.Text = "Game time";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Player 1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Player 2";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(214, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(50, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "A";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(214, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(50, 21);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.Text = "P";
-            // 
             // fParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,7 +242,6 @@
         private System.Windows.Forms.ComboBox comboBox_gameduration;
         private System.Windows.Forms.Label Timeforanswer_label;
         private System.Windows.Forms.Label Gametime_label;
-        private System.Windows.Forms.CheckBox checkBox_randomstart;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;

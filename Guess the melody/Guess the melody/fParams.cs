@@ -21,7 +21,7 @@ namespace Guess_the_melody
         void SetParams()
         {
             checkBox_usesubdirs.Checked = Victorina.allDirectories;
-            checkBox_randomstart.Checked = Victorina.randomStart;
+            
             comboBox_gameduration.Text = Victorina.gameDuration.ToString();
             comboBox_musicduration.Text = Victorina.musicDuration.ToString();
         }
@@ -31,7 +31,7 @@ namespace Guess_the_melody
             Victorina.allDirectories = checkBox_usesubdirs.Checked;
             Victorina.gameDuration = Convert.ToInt32(comboBox_gameduration.Text);
             Victorina.musicDuration = Convert.ToInt32(comboBox_musicduration.Text);
-            Victorina.randomStart = checkBox_randomstart.Checked;
+            
             Victorina.WriteParams();
 
             this.Hide();
